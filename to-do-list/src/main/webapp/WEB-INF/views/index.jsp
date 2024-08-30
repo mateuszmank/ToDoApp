@@ -10,25 +10,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="index.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/index.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Home</a>
     <sec:authorize access="isAuthenticated()">
-        <a class="navbar-brand" href="#">You are logged as <sec:authentication property="name"/></a>
+        <span class="navbar-text ml-auto">You are logged in as <sec:authentication property="name"/></span>
+        <form class="form-inline ml-3" action="<c:url value="/logout"/>" method="post">
+            <button class="btn btn-outline-light" type="submit">Logout</button>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
     </sec:authorize>
-
-    <div class="navbar-brand " id="navbarSupportedContent">
-        <ul class="navbar-brand">
-            <li class="navbar-brand">
-                <form action="<c:url value="/logout"/>" method="post">
-                    <input class="navbar-brand" type="submit" value="Logout">
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                </form>
-            </li>
-        </ul>
-    </div>
 </nav>
 <div class="container">
     <h1 class="text-center my-4">Welcome to To-Do List App</h1>
@@ -44,3 +37,4 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

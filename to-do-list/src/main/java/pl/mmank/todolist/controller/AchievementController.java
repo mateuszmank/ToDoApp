@@ -48,20 +48,6 @@ public class AchievementController {
         return "redirect:/achievements";  // Przekierowanie po zapisaniu
     }
 
-    @PutMapping("/{id}")                                                                            //aktualizacja istaniejącego osiągnięcia
-    public ResponseEntity<Achievement> updateAchievement(@PathVariable Long id, @RequestBody Achievement achievement) {
-        Achievement existingAchievement = achievementService.findById(id);
-        if (existingAchievement != null) {
-            existingAchievement.setName(achievement.getName());
-            existingAchievement.setDescription(achievement.getDescription());
-            existingAchievement.setDateEarned(achievement.getDateEarned());
-            achievementService.save(existingAchievement);
-            return ResponseEntity.ok(existingAchievement);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     @DeleteMapping("/{id}")                                                             //usuwa
     public ResponseEntity<Void> deleteAchievement(@PathVariable Long id) {
         Achievement achievement = achievementService.findById(id);

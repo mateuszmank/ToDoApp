@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="taskProfile.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/taskProfile.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,6 +33,7 @@
             <p class="card-text">Description: ${task.description}</p>
             <p class="card-text">Difficulty: ${task.difficulty}</p>
             <p class="card-text">Points: ${task.points}</p>
+            <a href="${pageContext.request.contextPath}/tasks/delete/${task.id}" class="btn btn-danger btn-block mt-4">Delete Task</a>
         </div>
     </div>
 </div>
@@ -42,4 +43,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

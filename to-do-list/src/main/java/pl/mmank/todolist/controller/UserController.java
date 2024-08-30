@@ -47,30 +47,15 @@ public class UserController {
         return "redirect:/users";  // Przekierowanie po zapisaniu
     }
 
-    @PutMapping("/{id}")                                  //aktualizacja użytkownika
-    public ResponseEntity<UserEntity> updateUser(@PathVariable Long id, @RequestBody UserEntity userEntity) {
-        UserEntity existingUserEntity = (UserEntity) userService.findById(id);
-        if (existingUserEntity != null) {
-            existingUserEntity.setUsername(userEntity.getUsername());
-            existingUserEntity.setEmail(userEntity.getEmail());
-            existingUserEntity.setPassword(userEntity.getPassword());
-            existingUserEntity.setLevel(userEntity.getLevel());
-            existingUserEntity.setXp(userEntity.getXp());
-            userService.save(existingUserEntity);
-            return ResponseEntity.ok(existingUserEntity);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
 
-    @DeleteMapping("/{id}")                              //usuwanie
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        UserEntity userEntity = (UserEntity) userService.findById(id);
+    @PostMapping("/delete/{id}")  // Usuwanie użytkownika
+    public String deleteUser(@PathVariable Long id) {
+        UserEntity userEntity = userService.findById(id);
         if (userEntity != null) {
             userService.delete(userEntity);
-            return ResponseEntity.noContent().build();
+            return "redirect:/users";  // Przekierowanie po usunięciu
         } else {
-            return ResponseEntity.notFound().build();
+            return "error";  // Widok błędu
         }
     }
 }

@@ -1,10 +1,44 @@
-/* Ustawienia dla kontenera */
+/* userList.css */
+
+/* Stylizacja nawigacji */
+.navbar {
+    padding: 0.75rem 1rem;
+}
+
+/* Stylizacja nazwy strony */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Stylizacja tekstu w nawigacji */
+.navbar .form-inline .navbar-text {
+    color: white;
+    margin-right: 1rem;
+}
+
+/* Stylizacja przycisku wylogowania */
+.btn-outline-light {
+    color: white;
+    border-color: white;
+    font-size: 1rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.btn-outline-light:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+/* Stylizacja kontenera */
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin-top: 50px;
 }
 
-/* Stylizacja nagłówka strony */
+/* Stylizacja nagłówka */
 h1 {
     color: #333;
     font-size: 2.5rem;
@@ -17,55 +51,9 @@ h1 {
     padding: 15px 20px;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    transition: background-color 0.3s ease;
 }
 
-.list-group-item:hover {
-    background-color: #e9ecef;
-}
-
-/* Stylizacja nawigacji */
-.navbar {
-    margin-bottom: 20px;
-}
-
-/* Stylizacja przycisku Logout */
-.navbar .form-inline button {
-    font-size: 1rem;
-    padding: 5px 15px;
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar .form-inline button:hover {
-    background-color: white;
-    color: #333;
-}
-
-/* Dodatkowe marginesy dla linku do strony głównej i przycisku logout */
-.navbar-brand {
-    margin-right: 20px;
-    font-size: 1.5rem;
-}
-
-.ml-auto {
-    margin-left: auto;
-}
-
-/* Stylizacja dla linku tworzenia nowego użytkownika */
+/* Stylizacja linku do tworzenia użytkownika */
 .list-group-item-action {
     font-weight: bold;
-    text-align: center;
-    color: #007bff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.list-group-item-action:hover {
-    background-color: #f1f1f1;
-    color: #0056b3;
 }

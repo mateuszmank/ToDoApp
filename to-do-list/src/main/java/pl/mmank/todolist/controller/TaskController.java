@@ -52,25 +52,6 @@ public class TaskController {
     }
 
 
-    @GetMapping("/edit/{id}")                // formularz do  edycja zadania
-    public String editTaskForm(@PathVariable("id") Long id, Model model) {
-        Task task = taskService.findById(id);
-        if (task == null) {
-            return "redirect:/tasks";
-        }
-        model.addAttribute("task", task);
-        return "taskForm";
-    }
-
-    @PostMapping("/edit/{id}")                       // edycja zadania
-    public String editTask(@PathVariable("id") Long id, @Valid @ModelAttribute("task") Task task, BindingResult result) {
-        if (result.hasErrors()) {
-            return "taskForm";
-        }
-        taskService.save(task);
-        return "redirect:/tasks";
-    }
-
     @GetMapping("/delete/{id}")                              //usunięcie
     public String deleteTask(@PathVariable("id") Long id) {
         taskService.deleteById(id);

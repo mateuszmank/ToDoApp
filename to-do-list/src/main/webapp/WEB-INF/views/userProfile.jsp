@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="userProfile.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/userProfile.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,6 +34,13 @@
             <p class="card-text">Level: ${user.level}</p>
             <p class="card-text">XP: ${user.xp}</p>
         </div>
+    </div>
+    <div class="d-flex justify-content-between mt-3">
+        <form action="${pageContext.request.contextPath}/users/delete/${user.id}" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <input type="hidden" name="_method" value="delete"/>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
     </div>
 </div>
 <!-- Bootstrap JS -->

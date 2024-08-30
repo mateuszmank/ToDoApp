@@ -14,10 +14,9 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Link to the home page -->
+    <!-- Link do strony głównej -->
     <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
-
-    <!-- Logout button in the top-right corner -->
+    <!-- Przycisk Logout w prawym górnym rogu -->
     <div class="ml-auto">
         <sec:authorize access="isAuthenticated()">
             <form action="<c:url value='/logout'/>" method="post" class="form-inline">
@@ -32,8 +31,16 @@
     <h1 class="text-center my-4">User List</h1>
     <ul class="list-group">
         <c:forEach var="user" items="${users}">
-            <li class="list-group-item">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="${pageContext.request.contextPath}/users/${user.id}" class="text-decoration-none">${user.username}</a>
+                <div>
+
+                    <form action="${pageContext.request.contextPath}/users/delete/${user.id}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        <input type="hidden" name="_method" value="delete"/>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </div>
             </li>
         </c:forEach>
         <div class="list-group">
@@ -44,6 +51,6 @@
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

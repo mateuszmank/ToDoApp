@@ -1,0 +1,21 @@
+/* taskForm.css */
+
+body {
+    background-color: #ffffff;
+    color: #343a40;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #17a2b8;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}

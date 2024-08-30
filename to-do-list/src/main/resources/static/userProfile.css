@@ -1,0 +1,26 @@
+/* userProfile.css */
+
+body {
+    background-color: #e9ecef;
+    color: #343a40;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #17a2b8;
+}
+
+.card {
+    margin-top: 20px;
+    border: 1px solid #17a2b8;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 18px;
+}

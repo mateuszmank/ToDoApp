@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,16 +16,17 @@ public class User {
     private String email;
     private String password;
     private int level;
+    private String role;
     private int xp;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Task> tasks = new HashSet<>();
 
     // Konstruktor domyślny
-    public User() {}
+    public UserEntity() {}
 
     // Konstruktor z parametrami
-    public User(String username, String email, String password, int level, int xp) {
+    public UserEntity(String username, String email, String password, int level, int xp) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -34,6 +35,14 @@ public class User {
     }
 
     // Gettery i Settery
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public Long getId() {
         return id;

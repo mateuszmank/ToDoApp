@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,11 +30,6 @@
             <form:errors path="description" cssClass="text-danger"/>
         </div>
 
-        <div class="form-group">
-            <label for="dateEarned">Date Earned:</label>
-            <form:input path="dateEarned" cssClass="form-control" id="dateEarned" type="datetime-local" required="true"/>
-            <form:errors path="dateEarned" cssClass="text-danger"/>
-        </div>
 
         <button type="submit" class="btn btn-primary btn-block">Save</button>
     </form:form>

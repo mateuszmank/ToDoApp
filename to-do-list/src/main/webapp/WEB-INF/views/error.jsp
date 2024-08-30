@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="error.css" rel="stylesheet"> <!-- Odniesienie do pliku CSS -->
+    <link href="/error.css" rel="stylesheet"> <!-- Odniesienie do pliku CSS -->
 </head>
 <body>
 <div class="container">

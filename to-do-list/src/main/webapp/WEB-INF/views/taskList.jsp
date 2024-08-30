@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +20,11 @@
     <ul class="list-group">
         <!-- Example of dynamic task list rendering -->
         <c:forEach var="task" items="${tasks}">
-            <li class="list-group-item">${task.name}</li>
+            <li class="list-group-item">${task.title}</li>
         </c:forEach>
+        <div class="list-group">
+            <a href="${pageContext.request.contextPath}/tasks/create" class="list-group-item list-group-item-action">Task Create</a>
+        </div>
     </ul>
 </div>
 <!-- Bootstrap JS -->

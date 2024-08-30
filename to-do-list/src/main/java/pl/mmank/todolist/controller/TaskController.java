@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.mmank.todolist.model.User;
 import pl.mmank.todolist.service.TaskService;
 import pl.mmank.todolist.model.Task;
 
@@ -21,7 +20,7 @@ public class TaskController {
 
     @GetMapping
     public String getAllTasks(Model model) {                                           //pobieranie zadań
-        model.addAttribute("tasks", taskService.findAll());
+        model.addAttribute("tasks", taskService.findAllTasksByActiveUser());
         return "taskList";
     }
 

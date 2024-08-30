@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.mmank.todolist.model.User;
 import pl.mmank.todolist.service.AchievementService;
 import pl.mmank.todolist.model.Achievement;
 
@@ -38,12 +37,12 @@ public class AchievementController {
 
     @GetMapping("/create")  // Wyświetlanie formularza do tworzenia
     public String createAchievementForm(Model model) {
-        model.addAttribute("achievement", new User());
+        model.addAttribute("achievement", new Achievement());
         return "achievementForm";  // Widok o nazwie
     }
 
 
-    @PostMapping("/crete")
+    @PostMapping("/create")
     public String createAchievement(@ModelAttribute Achievement achievement) {
         achievementService.save(achievement);
         return "redirect:/achievements";  // Przekierowanie po zapisaniu

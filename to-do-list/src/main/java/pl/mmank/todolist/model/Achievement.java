@@ -5,27 +5,29 @@ import javax.persistence.*;
 
 import java.time.LocalDateTime;
 
+
 @Entity
 public class Achievement {
 
-    @Id                                                                         // Wskazuje, że pole id jest kluczem głównym encji, czyli unikalnym identyfikatorem rekordu w tabeli bazy danych.
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
-
     private String name;
     private String description;
+
+    @OneToOne
+    @JoinColumn(name = "task_id")
+    private Task task;
+
     private LocalDateTime dateEarned;
 
     // Konstruktor domyślny
     public Achievement() {}
 
     // Konstruktor z parametrami
-    public Achievement(User user, String name, String description, LocalDateTime dateEarned) {
-        this.user = user;
+    public Achievement(UserEntity userEntity, String name, String description, LocalDateTime dateEarned) {
+        this.task = task;
         this.name = name;
         this.description = description;
         this.dateEarned = dateEarned;
@@ -41,12 +43,12 @@ public class Achievement {
         return id;
     }
 
-    public User getUser() {
-        return user;
+    public Task getTask() {
+        return task;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setTask(Task task) {
+        this.task = task;
     }
 
     public String getName() {

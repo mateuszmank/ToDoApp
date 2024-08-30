@@ -1,7 +1,11 @@
 package pl.mmank.todolist.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.mmank.todolist.model.User;
+import pl.mmank.todolist.model.UserEntity;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
+
+    Optional<UserEntity> findByUsername(String username);
 }

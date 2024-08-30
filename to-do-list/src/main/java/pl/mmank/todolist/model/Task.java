@@ -17,8 +17,8 @@ public class Task {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "userEntity_id", nullable = false)
+    private UserEntity userEntity;
 
     @NotBlank
     private String title;
@@ -38,8 +38,8 @@ public class Task {
     public Task() {}
 
     // Konstruktor z parametrami
-    public Task(User user, String title, String description, Difficulty difficulty, int points, boolean status) {
-        this.user = user;
+    public Task(UserEntity userEntity, String title, String description, Difficulty difficulty, int points, boolean status) {
+        this.userEntity = userEntity;
         this.title = title;
         this.description = description;
         this.difficulty = difficulty;
@@ -51,12 +51,12 @@ public class Task {
 
 
 
-    public User getUser() {
-        return user;
+    public UserEntity getUser() {
+        return userEntity;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
     public String getTitle() {

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.mmank.todolist.model.UserEntity;
 import pl.mmank.todolist.service.AchievementService;
 import pl.mmank.todolist.model.Achievement;
 
@@ -48,14 +49,14 @@ public class AchievementController {
         return "redirect:/achievements";  // Przekierowanie po zapisaniu
     }
 
-    @DeleteMapping("/{id}")                                                             //usuwa
-    public ResponseEntity<Void> deleteAchievement(@PathVariable Long id) {
+    @PostMapping("/delete/{id}")  // Usuwanie użytkownika
+    public String deleteAchievements(@PathVariable Long id) {
         Achievement achievement = achievementService.findById(id);
         if (achievement != null) {
             achievementService.delete(achievement);
-            return ResponseEntity.noContent().build();
+            return "redirect:/achievements";  // Przekierowanie po usunięciu
         } else {
-            return ResponseEntity.notFound().build();
+            return "error";  // Widok błędu
         }
     }
 }

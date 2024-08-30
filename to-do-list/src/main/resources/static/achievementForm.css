@@ -1,23 +1,25 @@
-/*  */
-
-/* Ustawienie maksymalnej szerokości formularza i marginesów */
-form {
+/* Form container settings */
+.container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
-/* Stylizacja nagłówka */
+/* Page header styling */
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Stylizacja etykiet formularza */
+/* Form container settings */
+form {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
 label {
     display: block;
     margin-bottom: 8px;
@@ -25,12 +27,8 @@ label {
     color: #555;
 }
 
-/* Stylizacja pól wejściowych formularza */
+/* Input field styling */
 input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-input[type="datetime-local"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -40,11 +38,11 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Stylizacja przycisku 'Save' */
+/* Submit button styling */
 button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     color: white;
@@ -54,10 +52,10 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
 }
 
-/* Stylizacja błędów walidacji */
+/* Error message styling */
 .text-danger {
     color: #dc3545;
     font-size: 0.875rem;
@@ -65,31 +63,14 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Stylizacja pola textarea */
+/* Textarea field styling */
 textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-/* Stylizacja pól wejściowych formularza w przypadku błędów */
+/* Styling for invalid input fields */
 input.is-invalid,
 textarea.is-invalid {
     border-color: #dc3545;
-}
-
-/* Dodatkowa stylizacja dla karty osiągnięcia (opcjonalna) */
-.card {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-.card-title {
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.card-text {
-    font-size: 1rem;
-    color: #666;
 }

@@ -1,10 +1,44 @@
-/* Ustawienia dla kontenera */
+/* Stylizacja nawigacji */
+.navbar {
+    padding: 0.75rem 1rem;
+    margin-bottom: 20px;
+}
+
+/* Stylizacja nazwy strony */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Stylizacja tekstu w nawigacji */
+.navbar .form-inline .navbar-text {
+    color: white;
+    margin-right: 1rem;
+}
+
+/* Stylizacja przycisku wylogowania */
+.btn-outline-light {
+    color: white;
+    border-color: white;
+    font-size: 1rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+/* Stylizacja kontenera */
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin-top: 50px;
 }
 
-/* Stylizacja nagłówka strony */
+/* Stylizacja nagłówka */
 h1 {
     color: #333;
     font-size: 2.5rem;
@@ -17,55 +51,9 @@ h1 {
     padding: 15px 20px;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #e8f5e9;
-    border: 1px solid #c8e6c9;
-    transition: background-color 0.3s ease;
 }
 
-.list-group-item:hover {
-    background-color: #c8e6c9;
-}
-
-/* Stylizacja nawigacji */
-.navbar {
-    margin-bottom: 20px;
-}
-
-/* Stylizacja przycisku Logout */
-.navbar .form-inline button {
-    font-size: 1rem;
-    padding: 5px 15px;
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar .form-inline button:hover {
-    background-color: white;
-    color: #333;
-}
-
-/* Dodatkowe marginesy dla linku do strony głównej i przycisku logout */
-.navbar-brand {
-    margin-right: 20px;
-    font-size: 1.5rem;
-}
-
-.ml-auto {
-    margin-left: auto;
-}
-
-/* Stylizacja dla linku tworzenia nowego osiągnięcia */
+/* Stylizacja linku do tworzenia osiągnięcia */
 .list-group-item-action {
     font-weight: bold;
-    text-align: center;
-    color: #388e3c;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.list-group-item-action:hover {
-    background-color: #a5d6a7;
-    color: #2e7d32;
 }

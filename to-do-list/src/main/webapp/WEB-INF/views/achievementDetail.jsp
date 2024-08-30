@@ -8,19 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achievement Detail</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrap.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="achievementDetail.css" rel="stylesheet"> <!-- Link to the CSS file -->
+    <link href="${pageContext.request.contextPath}/resources/css/achievementDetail.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Link to the home page -->
     <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
-
-    <!-- Logout button in the top-right corner -->
     <div class="ml-auto">
         <sec:authorize access="isAuthenticated()">
-            <form action="<c:url value='/logout'/>" method="post" class="form-inline">
+            <form action="${pageContext.request.contextPath}/logout" method="post" class="form-inline">
                 <span class="navbar-text mr-3">You are logged in as <sec:authentication property="name"/></span>
                 <button type="submit" class="btn btn-outline-light">Logout</button>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -33,8 +30,8 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">${achievement.name}</h5>
-            <p class="card-text">${achievement.description}</p>
-            <p class="card-text"><small class="text-muted">Date Earned: ${achievement.dateEarned}</small></p>
+            <p class="card-text">Description: ${achievement.description}</p>
+            <a href="${pageContext.request.contextPath}/achievements/delete/${achievement.id}" class="btn btn-danger btn-block mt-4">Delete Achievement</a>
         </div>
     </div>
 </div>

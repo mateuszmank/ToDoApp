@@ -6,21 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievement Detail</title>
+    <title>Task Profile</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="achievementDetail.css" rel="stylesheet"> <!-- Link to the CSS file -->
+    <link href="taskProfile.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Link to the home page -->
     <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
-
-    <!-- Logout button in the top-right corner -->
     <div class="ml-auto">
         <sec:authorize access="isAuthenticated()">
-            <form action="<c:url value='/logout'/>" method="post" class="form-inline">
+            <form action="${pageContext.request.contextPath}/logout" method="post" class="form-inline">
                 <span class="navbar-text mr-3">You are logged in as <sec:authentication property="name"/></span>
                 <button type="submit" class="btn btn-outline-light">Logout</button>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -29,18 +26,20 @@
     </div>
 </nav>
 <div class="container">
-    <h1 class="text-center my-4">Achievement Detail</h1>
+    <h1 class="text-center my-4">Task Profile</h1>
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">${achievement.name}</h5>
-            <p class="card-text">${achievement.description}</p>
-            <p class="card-text"><small class="text-muted">Date Earned: ${achievement.dateEarned}</small></p>
+            <h5 class="card-title">${task.title}</h5>
+            <p class="card-text">Description: ${task.description}</p>
+            <p class="card-text">Difficulty: ${task.difficulty}</p>
+            <p class="card-text">Points: ${task.points}</p>
         </div>
     </div>
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

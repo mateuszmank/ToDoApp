@@ -28,9 +28,11 @@
 <div class="container">
     <h1 class="text-center my-4">Tasks</h1>
     <ul class="list-group">
-        <!-- Example of dynamic task list rendering -->
+        <!-- Dynamic task list rendering with links -->
         <c:forEach var="task" items="${tasks}">
-            <li class="list-group-item">${task.title}</li>
+            <li class="list-group-item">
+                <a href="${pageContext.request.contextPath}/tasks/${task.id}" class="text-decoration-none">${task.title}</a>
+            </li>
         </c:forEach>
         <div class="list-group">
             <a href="${pageContext.request.contextPath}/tasks/create" class="list-group-item list-group-item-action">Task Create</a>
@@ -43,3 +45,4 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

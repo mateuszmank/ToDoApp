@@ -30,7 +30,11 @@
     <ul class="list-group">
         <!-- Dynamiczne renderowanie listy osiągnięć -->
         <c:forEach var="achievement" items="${achievements}">
-            <li class="list-group-item">${achievement.name}</li>
+            <li class="list-group-item">
+                <a href="${pageContext.request.contextPath}/achievements/${achievement.id}">
+                        ${achievement.name}
+                </a>
+            </li>
         </c:forEach>
         <div class="list-group">
             <a href="${pageContext.request.contextPath}/achievements/create" class="list-group-item list-group-item-action">Achievement Create</a>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.mmank.todolist.model.UserEntity;
 import pl.mmank.todolist.service.TaskService;
 import pl.mmank.todolist.model.Task;
 
@@ -22,6 +23,17 @@ public class TaskController {
     public String getAllTasks(Model model) {                                           //pobieranie zadań
         model.addAttribute("tasks", taskService.findAllTasksByActiveUser());
         return "taskList";
+    }
+
+    @GetMapping("/{id}")                                                        //pobieranie użytkownika po ID
+    public String getTaskById(@PathVariable Long id, Model model) {
+        Task task = (Task) taskService.findById(id);
+        if (task != null) {
+            model.addAttribute("task", task);
+            return "taskProfile";  // Widok o nazwie "taskProfile"
+        } else {
+            return "error";  // Widok błędu
+        }
     }
 
     @GetMapping("/create")                                       //formularz do tworzenia

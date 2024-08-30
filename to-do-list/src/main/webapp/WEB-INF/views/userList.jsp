@@ -14,14 +14,14 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- Link do strony głównej -->
+    <!-- Link to the home page -->
     <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
 
-    <!-- Przycisk Logout w prawym górnym rogu -->
+    <!-- Logout button in the top-right corner -->
     <div class="ml-auto">
         <sec:authorize access="isAuthenticated()">
             <form action="<c:url value='/logout'/>" method="post" class="form-inline">
-                <span class="navbar-text mr-3">You are logged in as <sec:authentication property="name"/></span>
+                <span class="navbar-text mr-3">Logged in as <sec:authentication property="name"/></span>
                 <button type="submit" class="btn btn-outline-light">Logout</button>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
@@ -32,18 +32,18 @@
     <h1 class="text-center my-4">User List</h1>
     <ul class="list-group">
         <c:forEach var="user" items="${users}">
-            <li class="list-group-item">${user.username}</li>
+            <li class="list-group-item">
+                <a href="${pageContext.request.contextPath}/users/${user.id}" class="text-decoration-none">${user.username}</a>
+            </li>
         </c:forEach>
         <div class="list-group">
-            <a href="${pageContext.request.contextPath}/users/create" class="list-group-item list-group-item-action">User Create</a>
+            <a href="${pageContext.request.contextPath}/users/create" class="list-group-item list-group-item-action">Create User</a>
         </div>
     </ul>
 </div>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-

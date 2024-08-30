@@ -1,22 +1,71 @@
-/* taskList.css */
-
-body {
-    background-color: #f8f9fa;
-    color: #343a40;
+/* Ustawienia dla kontenera */
+.container {
+    max-width: 800px;
+    margin-top: 50px;
 }
 
+/* Stylizacja nagłówka strony */
 h1 {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: #28a745;
+    color: #333;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
+/* Stylizacja listy zadań */
 .list-group-item {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #e8f0fe;
+    border: 1px solid #cfd8dc;
+    transition: background-color 0.3s ease;
 }
 
+.list-group-item:hover {
+    background-color: #d0e0fc;
+}
+
+/* Stylizacja nawigacji */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Stylizacja przycisku Logout */
+.navbar .form-inline button {
+    font-size: 1rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .form-inline button:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Dodatkowe marginesy dla linku do strony głównej i przycisku logout */
 .navbar-brand {
-    font-size: 24px;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+/* Stylizacja dla linku tworzenia nowego zadania */
+.list-group-item-action {
     font-weight: bold;
+    text-align: center;
+    color: #0277bd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-group-item-action:hover {
+    background-color: #b3e5fc;
+    color: #01579b;
 }

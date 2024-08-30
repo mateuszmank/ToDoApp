@@ -1,49 +1,51 @@
-/* Stylizacja formularza */
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* userForm.css */
+
+/* Stylizacja kontenera */
+.container {
+    max-width: 600px;
+    margin-top: 50px;
 }
 
+/* Stylizacja nagłówka */
 h1 {
+    color: #333;
+    font-size: 2.5rem;
     text-align: center;
+}
+
+/* Stylizacja pól formularza */
+.form-group label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Stylizacja błędów formularza */
+.text-danger {
+    color: #dc3545;
+}
+
+/* Stylizacja przycisku wylogowania */
+.navbar .form-inline button {
+    font-size: 1rem;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+/* Stylizacja na hover dla przycisku wylogowania */
+.navbar .form-inline button:hover {
+    background-color: white;
     color: #333;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
+/* Dodatkowe marginesy dla linku do strony głównej i przycisku logout */
+.navbar-brand {
+    font-size: 1.5rem;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #218838;
+.ml-auto {
+    margin-left: auto;
 }

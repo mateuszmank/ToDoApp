@@ -1,21 +1,45 @@
 /* taskForm.css */
-
-body {
-    background-color: #ffffff;
-    color: #343a40;
-}
-
-h1 {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: #17a2b8;
-}
-
-.form-group label {
-    font-weight: bold;
+.navbar {
+    padding: 0.75rem 1rem;
 }
 
 .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.navbar .form-inline .navbar-text {
+    color: white;
+    margin-right: 1rem;
+}
+
+.btn-outline-light {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-light:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.alert {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.25rem;
 }

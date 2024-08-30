@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,19 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Users</a>
+    <!-- Link do strony głównej -->
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
+
+    <!-- Przycisk Logout w prawym górnym rogu -->
+    <div class="ml-auto">
+        <sec:authorize access="isAuthenticated()">
+            <form action="<c:url value='/logout'/>" method="post" class="form-inline">
+                <span class="navbar-text mr-3">You are logged in as <sec:authentication property="name"/></span>
+                <button type="submit" class="btn btn-outline-light">Logout</button>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form>
+        </sec:authorize>
+    </div>
 </nav>
 <div class="container">
     <h1 class="text-center my-4">User List</h1>
@@ -32,4 +45,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 

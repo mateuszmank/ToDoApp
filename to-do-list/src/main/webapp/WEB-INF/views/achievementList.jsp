@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +14,27 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Achievements</a>
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/">Home</a>
+    <div class="ml-auto">
+        <sec:authorize access="isAuthenticated()">
+            <form action="<c:url value='/logout'/>" method="post" class="form-inline">
+                <span class="navbar-text mr-3">You are logged in as <sec:authentication property="name"/></span>
+                <button type="submit" class="btn btn-outline-light">Logout</button>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form>
+        </sec:authorize>
+    </div>
 </nav>
 <div class="container">
     <h1 class="text-center my-4">Achievements</h1>
     <ul class="list-group">
+        <!-- Dynamiczne renderowanie listy osiągnięć -->
         <c:forEach var="achievement" items="${achievements}">
             <li class="list-group-item">${achievement.name}</li>
         </c:forEach>
+        <div class="list-group">
+            <a href="${pageContext.request.contextPath}/achievements/create" class="list-group-item list-group-item-action">Achievement Create</a>
+        </div>
     </ul>
 </div>
 <!-- Bootstrap JS -->
